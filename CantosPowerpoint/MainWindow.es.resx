@@ -148,6 +148,15 @@
   <data name="_languageMenuItem.Header" xml:space="preserve">
     <value>Idioma</value>
   </data>
+  <data name="_lblSlideNum.ToolTip" xml:space="preserve">
+    <value>Numero de filmina</value>
+  </data>
+  <data name="_lblSongsList.Content" xml:space="preserve">
+    <value>Entra #s de Cantos:</value>
+  </data>
+  <data name="_lblSongsListProject.Content" xml:space="preserve">
+    <value>Cantos a Proyectar:</value>
+  </data>
   <data name="_openPptMenuItem.Header" xml:space="preserve">
     <value>Abrir Powerpoint</value>
   </data>
@@ -159,5 +168,27 @@
   </data>
   <data name="_spanishMenuItem.Header" xml:space="preserve">
     <value>Español</value>
+  </data>
+  <data name="_tbarAddButton.ToolTip" xml:space="preserve">
+    <value>Agregar o insertar cantos a la lista de proyeccion</value>
+    <comment> </comment>
+  </data>
+  <data name="_tbarNextButton.ToolTip" xml:space="preserve">
+    <value>Avanzar a la siguiente filmina</value>
+  </data>
+  <data name="_tbarPresenterView.ToolTip" xml:space="preserve">
+    <value>Prender/Apagar la ventana de presentador</value>
+  </data>
+  <data name="_tbarPreviousButton.ToolTip" xml:space="preserve">
+    <value>Regresar a la filmina anterior</value>
+  </data>
+  <data name="_tbarRemoveButton.ToolTip" xml:space="preserve">
+    <value>Eliminar de la lista el canto (o los cantos) seleccionados</value>
+  </data>
+  <data name="_tbarStartButton.ToolTip" xml:space="preserve">
+    <value>Iniciar la proyeccion desde el primer canto o en el canto seleccionado</value>
+  </data>
+  <data name="_tbarStopButton.ToolTip" xml:space="preserve">
+    <value>Detener la proyeccion de la presentacion</value>
   </data>
 </root>

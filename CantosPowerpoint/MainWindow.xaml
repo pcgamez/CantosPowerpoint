@@ -8,8 +8,8 @@
     <Grid Margin="0,0,0,0">
 
         <StatusBar HorizontalAlignment="Left" Height="26" Margin="0,247,0,0" VerticalAlignment="Top" Width="436">
-            <ProgressBar x:Name="pBar" Minimum="0" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="247"/>
-            <Label x:Name="lblSongBook" Content="" Height="23" Width="174" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <ProgressBar x:Name="pBar" Minimum="0" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="218"/>
+            <Label x:Name="lblSongBook" Content="" Height="24" Width="209" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold"/>
         </StatusBar>
 
         <Menu Height="22" x:Name="_mainMenu" VerticalAlignment="Top">
@@ -33,60 +33,56 @@
         </Menu>
 
         <TextBox x:Name="tboxSongsList" HorizontalAlignment="Left" Height="153" Margin="10,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" HorizontalScrollBarVisibility="Auto" MaxLines="20" AcceptsReturn="True" AcceptsTab="True" VerticalScrollBarVisibility="Auto" IsEnabled="False" TabIndex="30" AutomationProperties.AccessKey="N" ToolTip="Enter as many numbers as you would like. Separate them by a space, comma, or line."/>
-        <Label x:Name="lblSongsList" Content="Enter Song Numbers:" HorizontalAlignment="Left" Margin="10,27,0,0" VerticalAlignment="Top" Width="129"/>
+        <Label x:Name="lblSongsList" Content="{Resx _lblSongsList.Content}" HorizontalAlignment="Left" Margin="10,27,0,0" VerticalAlignment="Top" Width="129"/>
         <ListBox x:Name="lboxSongs" HorizontalAlignment="Left" Height="153" Margin="139,53,0,0" VerticalAlignment="Top" Width="285" SelectionChanged="lboxSongs_SelectionChanged" KeyDown="lboxSongs_KeyDown" TabIndex="80" IsTabStop="True" SelectionMode="Extended"/>
-        <Label x:Name="lblSongsList_Copy" Content="Songs to Project:" HorizontalAlignment="Left" Margin="139,27,0,0" VerticalAlignment="Top" Width="101" RenderTransformOrigin="0.823,0.456"/>
-        <ToolBar x:Name="tbarSlideShow" HorizontalAlignment="Left" Margin="10,211,0,0" VerticalAlignment="Top" Header="" IsTabStop="True" TabIndex="40">
-            <Button x:Name="tbarAddButton" IsEnabled="False" Click="tbarAddButton_Click" ToolTip="Add or insert song numbers to list of songs" TabIndex="50">
-                <Image x:Name="imgAdd" Source="Images/Icon_Add_16x.png" Width="16" >
-                    <Image.Effect>
-                        <DropShadowEffect BlurRadius="3" ShadowDepth="3"/>
-                    </Image.Effect>
-                </Image>
-            </Button>
-            <Button x:Name="tbarRemoveButton"  IsEnabled="False" ToolTip="Remove selected song" TabIndex="60" Click="tbarRemoveButton_Click">
-                <Image x:Name="imgRemove" Source="Images/Icon_Remove_16x.png" Width="16" >
-                    <Image.Effect>
-                        <DropShadowEffect BlurRadius="3" ShadowDepth="3"/>
-                    </Image.Effect>
-                </Image>
-            </Button>
-            <Separator/>
-            <ToggleButton x:Name="tbarPresenterView" ToolTip="Toggle Presenter View On/Off" Width="14" Height="14" Margin="0" BorderThickness="2" IsEnabled="False" BorderBrush="Gray" IsChecked="True" Visibility="Collapsed" Checked="tbarPresenterView_Checked" Unchecked="tbarPresenterView_Unchecked"/>
-            <Button x:Name="tbarStartButton" IsEnabled="False" Click="tbarStartButton_Click" ToolTip="Start slide show from first slide or at selected song" TabIndex="70">
-                <Image x:Name="imgStart" Source="Images/Icon_Start_16x.png" Width="16" >
-                    <Image.Effect>
-                        <DropShadowEffect BlurRadius="3" ShadowDepth="3"/>
-                    </Image.Effect>
-                </Image>
-            </Button>
-            <Button x:Name="tbarNextButton"  IsEnabled="False" ToolTip="Advance to next slide" TabIndex="80" Click="tbarNextButton_Click">
-                <Image x:Name="imgNext" Source="Images/Icon_Next_16x.png" Width="16" >
-                    <Image.Effect>
-                        <DropShadowEffect BlurRadius="3" ShadowDepth="3"/>
-                    </Image.Effect>
-                </Image>
-            </Button>
-            <Button x:Name="tbarPreviousButton"  IsEnabled="False" ToolTip="Go back to previous slide" TabIndex="90" Click="tbarPreviousButton_Click">
-                <Image x:Name="imgPrevious" Source="Images/Icon_Previous_16x.png" Width="16" >
-                    <Image.Effect>
-                        <DropShadowEffect BlurRadius="3" ShadowDepth="3"/>
-                    </Image.Effect>
-                </Image>
-            </Button>
-            <Button x:Name="tbarStopButton"  IsEnabled="False" TabIndex="100" ToolTip="Stop slide show presentation" Click="tbarStopButton_Click">
-                <Image x:Name="imgStop" Source="Images/Icon_Stop_16x.png" Width="16" >
-                    <Image.Effect>
-                        <DropShadowEffect BlurRadius="3" ShadowDepth="3"/>
-                    </Image.Effect>
-                </Image>
-            </Button>
-            <Label x:Name="lblSlideNum" Content="--" ToolTip="Slide number" Width="26">
-                <Label.Effect>
+        <Label x:Name="lblSongsListProject" Content="{Resx _lblSongsListProject.Content}" HorizontalAlignment="Left" Margin="139,27,0,0" VerticalAlignment="Top" Width="187" RenderTransformOrigin="0.823,0.456"/>
+        <Button x:Name="tbarAddButton" IsEnabled="False" Click="tbarAddButton_Click" ToolTip="{Resx _tbarAddButton.ToolTip}" TabIndex="50" Margin="11,216,403,35">
+            <Image x:Name="imgAdd" Source="Images/Icon_Add_16x.png" Width="16" >
+                <Image.Effect>
                     <DropShadowEffect BlurRadius="3" ShadowDepth="3"/>
-                </Label.Effect>
-            </Label>
-        </ToolBar>
-        <ToolBar x:Name="toolBar" HorizontalAlignment="Left" Margin="-35,104,0,0" VerticalAlignment="Top"/>
+                </Image.Effect>
+            </Image>
+        </Button>
+        <Button x:Name="tbarRemoveButton"  IsEnabled="False" ToolTip="{Resx _tbarRemoveButton.ToolTip}" TabIndex="60" Click="tbarRemoveButton_Click" Margin="39,216,375,35">
+            <Image x:Name="imgRemove" Source="Images/Icon_Remove_16x.png" Width="16" >
+                <Image.Effect>
+                    <DropShadowEffect BlurRadius="3" ShadowDepth="3"/>
+                </Image.Effect>
+            </Image>
+        </Button>
+        <ToggleButton x:Name="tbarPresenterView" ToolTip="{Resx _tbarPresenterView.ToolTip}" BorderThickness="2" IsEnabled="False" BorderBrush="Gray" IsChecked="True" Checked="tbarPresenterView_Checked" Unchecked="tbarPresenterView_Unchecked" Margin="67,219,355,40"/>
+        <Button x:Name="tbarStartButton" IsEnabled="False" Click="tbarStartButton_Click" ToolTip="{Resx _tbarStartButton.ToolTip}" TabIndex="70" Margin="87,216,327,35">
+            <Image x:Name="imgStart" Source="Images/Icon_Start_16x.png" Width="16" >
+                <Image.Effect>
+                    <DropShadowEffect BlurRadius="3" ShadowDepth="3"/>
+                </Image.Effect>
+            </Image>
+        </Button>
+        <Button x:Name="tbarNextButton"  IsEnabled="False" ToolTip="{Resx _tbarNextButton.ToolTip}" TabIndex="80" Click="tbarNextButton_Click" Margin="115,216,299,35">
+            <Image x:Name="imgNext" Source="Images/Icon_Next_16x.png" Width="16" >
+                <Image.Effect>
+                    <DropShadowEffect BlurRadius="3" ShadowDepth="3"/>
+                </Image.Effect>
+            </Image>
+        </Button>
+        <Button x:Name="tbarPreviousButton"  IsEnabled="False" ToolTip="{Resx _tbarPreviousButton.ToolTip}" TabIndex="90" Click="tbarPreviousButton_Click" Margin="143,216,271,35">
+            <Image x:Name="imgPrevious" Source="Images/Icon_Previous_16x.png" Width="16" >
+                <Image.Effect>
+                    <DropShadowEffect BlurRadius="3" ShadowDepth="3"/>
+                </Image.Effect>
+            </Image>
+        </Button>
+        <Button x:Name="tbarStopButton"  IsEnabled="False" TabIndex="100" ToolTip="{Resx _tbarStopButton.ToolTip}" Click="tbarStopButton_Click" Margin="171,216,243,35">
+            <Image x:Name="imgStop" Source="Images/Icon_Stop_16x.png" Width="16" >
+                <Image.Effect>
+                    <DropShadowEffect BlurRadius="3" ShadowDepth="3"/>
+                </Image.Effect>
+            </Image>
+        </Button>
+        <Label x:Name="lblSlideNum" Content="--" ToolTip="{Resx _lblSlideNum.ToolTip}" Margin="199,211,211,36">
+            <Label.Effect>
+                <DropShadowEffect BlurRadius="3" ShadowDepth="3"/>
+            </Label.Effect>
+        </Label>
     </Grid>
 </Window>

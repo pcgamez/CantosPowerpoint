@@ -272,7 +272,7 @@ namespace Iglesia.CantosPowerpoint
                 _openPptMenuItem.IsEnabled = false;
                 _closePptMenuItem.IsEnabled = true;
 
-                tbarSlideShow.IsEnabled = true;
+                //tbarSlideShow.IsEnabled = true;
                 tbarAddButton.IsEnabled = true;
 
                 _ccMenuItem.IsEnabled = true;
@@ -281,11 +281,13 @@ namespace Iglesia.CantosPowerpoint
                 tboxSongsList.IsEnabled = true;
                 tboxSongsList.Focus();
 
-                if (double.TryParse(objPPT.Version, out PPTVersion))
+                //tbarSlideShow.focusman
+
+                /*if (double.TryParse(objPPT.Version, out PPTVersion))
                 {
                     if (PPTVersion > 12.0)
                         tbarPresenterView.Visibility = Visibility.Visible;
-                }
+                }*/
 
                 SetForegroundWindow(Process.GetCurrentProcess().MainWindowHandle);
                 //SetFocus(new HandleRef(null, Process.GetCurrentProcess().MainWindowHandle)); // not needed
@@ -332,11 +334,11 @@ namespace Iglesia.CantosPowerpoint
                 return;
 
             _closePptMenuItem.IsEnabled = false;
-            tbarSlideShow.IsEnabled = false;
+            //tbarSlideShow.IsEnabled = false;
 
             tbarAddButton.IsEnabled = false;
             tbarRemoveButton.IsEnabled = false;
-            tbarPresenterView.IsEnabled = false;
+            //tbarPresenterView.IsEnabled = false;
             tbarStartButton.IsEnabled = false;
             tbarNextButton.IsEnabled = false;
             tbarPreviousButton.IsEnabled = false;
@@ -433,11 +435,11 @@ namespace Iglesia.CantosPowerpoint
                     SongsList.Clear();
 
                     _closePptMenuItem.IsEnabled = true;
-                    tbarSlideShow.IsEnabled = true;
+                    //tbarSlideShow.IsEnabled = true;
 
                     tbarAddButton.IsEnabled = true;
                     tbarRemoveButton.IsEnabled = false;
-                    tbarPresenterView.IsEnabled = false;
+                    //tbarPresenterView.IsEnabled = false;
                     tbarStartButton.IsEnabled = false;
                     tbarNextButton.IsEnabled = false;
                     tbarPreviousButton.IsEnabled = false;
@@ -589,12 +591,12 @@ namespace Iglesia.CantosPowerpoint
 
                 if (countSongs > 0)
                 {
-                    tbarPresenterView.IsEnabled = true;
+                    //tbarPresenterView.IsEnabled = true;
                     tbarStartButton.IsEnabled = true;
                 }
                 else if (lboxSongs.Items.Count == 0)
                 {
-                    tbarPresenterView.IsEnabled = false;
+                    //tbarPresenterView.IsEnabled = false;
                     tbarStartButton.IsEnabled = false;
                 }
 
@@ -878,10 +880,6 @@ namespace Iglesia.CantosPowerpoint
 
         private void tbarRemoveButton_Click(object sender, RoutedEventArgs e)
         {
-            /*if (lboxSongs.SelectedItems.Count > 0)
-                foreach (object SongSelected in lboxSongs.SelectedItems)
-                    RemoveSong(SongSelected);*/
-
             // Reuse delete procedure used when pressing Delete key
             System.Windows.Input.KeyEventArgs kea = new System.Windows.Input.KeyEventArgs(Keyboard.PrimaryDevice,
                 new HwndSource(0, 0, 0, 0, 0, "", IntPtr.Zero), 0, Key.Delete);
@@ -930,13 +928,13 @@ namespace Iglesia.CantosPowerpoint
 
         private void tbarPresenterView_Checked(object sender, RoutedEventArgs e)
         {
-            tbarPresenterView.ToolTip = "[ON] Toggle Presenter View On/Off";
+            tbarPresenterView.ToolTip = "[ON] " + getStringByName("_tbarPresenterView.ToolTip");
 
         }
 
         private void tbarPresenterView_Unchecked(object sender, RoutedEventArgs e)
         {
-            tbarPresenterView.ToolTip = "[OFF] Toggle Presenter View On/Off";
+            tbarPresenterView.ToolTip = "[OFF] " + getStringByName("_tbarPresenterView.ToolTip");
         }
 
         private void _ccMenuItem_Click(object sender, RoutedEventArgs e)
@@ -951,6 +949,38 @@ namespace Iglesia.CantosPowerpoint
             currentSongBookPath = CEPath;
             lblSongBook.Content = CEName;
             _ccMenuItem.IsChecked = false;
+        }
+
+        private void tbarSlideShow_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            switch (e.Key)
+            {
+                case Key.Escape:
+                    StopSlideShow();
+                    break;
+                case Key.Right:
+                case Key.Return:
+                case Key.Space:
+                    AdvanceSlideShow(1);
+                    break;
+                case Key.Left:
+                case Key.Back:
+                    AdvanceSlideShow(-1);
+                    break;
+                case Key.PageUp:
+                    break;
+                case Key.PageDown:
+                    break;
+                case Key.Delete:
+                    break;
+                case Key.Home:
+                    break;
+                case Key.End:
+                    break;
+                default:
+                    break;
+            }
+
         }
     }
 }

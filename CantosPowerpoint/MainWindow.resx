@@ -224,6 +224,15 @@
   <data name="_languageMenuItem.Header" xml:space="preserve">
     <value>Language</value>
   </data>
+  <data name="_lblSlideNum.ToolTip" xml:space="preserve">
+    <value>Slide number</value>
+  </data>
+  <data name="_lblSongsList.Content" xml:space="preserve">
+    <value>Enter Song #s:</value>
+  </data>
+  <data name="_lblSongsListProject.Content" xml:space="preserve">
+    <value>Songs to Project:</value>
+  </data>
   <data name="_openPptMenuItem.Header" xml:space="preserve">
     <value>Open Powerpoint</value>
   </data>
@@ -235,5 +244,27 @@
   </data>
   <data name="_spanishMenuItem.Header" xml:space="preserve">
     <value>Español</value>
+  </data>
+  <data name="_tbarAddButton.ToolTip" xml:space="preserve">
+    <value>Add or insert songs to list of songs to proyect</value>
+    <comment> </comment>
+  </data>
+  <data name="_tbarNextButton.ToolTip" xml:space="preserve">
+    <value>Advance to next slide</value>
+  </data>
+  <data name="_tbarPresenterView.ToolTip" xml:space="preserve">
+    <value>Toggle presenter view On/Off</value>
+  </data>
+  <data name="_tbarPreviousButton.ToolTip" xml:space="preserve">
+    <value>Go back to previous slide</value>
+  </data>
+  <data name="_tbarRemoveButton.ToolTip" xml:space="preserve">
+    <value>Remove selected song(s)</value>
+  </data>
+  <data name="_tbarStartButton.ToolTip" xml:space="preserve">
+    <value>Start slide show from first slide or at selected song</value>
+  </data>
+  <data name="_tbarStopButton.ToolTip" xml:space="preserve">
+    <value>Stop slide show presentation</value>
   </data>
 </root>
